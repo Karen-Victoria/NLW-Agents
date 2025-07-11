@@ -109,6 +109,16 @@ button:disabled {
     transition: initial;
     transform: initial;
     box-shadow: initial;
-    opacity: 0.5;
     cursor: not-allowed;
+}
+
+
+.loading {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    50% {
+        opacity: 0.5;
+    }
 }

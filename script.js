@@ -20,6 +20,7 @@ const enviarFormulario = (event) => {
 
     askButton.disabled = true
     askButton.textContent = 'Perguntando...'
+    askButton.classList.add('loading')
 }
 
 form.addEventListener('submit', enviarFormulario)
