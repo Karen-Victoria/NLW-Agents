@@ -1,0 +1,114 @@
+body {
+    background-image: url("./assets/bg.jpg");
+    background-repeat: no-repeat; /*keyword*/
+    background-size: 100% auto; /*width height*/
+    background-position: top center; /*vertical(y) horizontal(x)*/
+    background-color: #121214; /* HEX: RR, GG, BB*/
+    color: white;
+}
+
+body *, :root { /*o "*" é o seletor universal / o "root" é para que tenha mais força*/
+    font-family: "Inter";
+    line-height: 160%;
+}
+
+header {
+    padding-top: 2rem; /*1rem: 16px*/
+    text-align: center;
+}
+
+header img {
+    width: 15rem; 
+}
+
+main {
+    max-width: 36rem;
+    width: 90%;
+    margin: 3rem auto; /*"3rem" é aplicado em cima e embaixo da main, "auto" é aplicado na esquerda e direita*/
+}
+
+section {
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%);
+    border-radius: 0.625rem;
+    padding-top: 4px;
+}
+
+section > div {
+    padding: 2rem;
+    padding-top: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #2A2634;
+}
+
+section h2 {
+    letter-spacing: -0.47px;
+}
+
+section p {
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+/*Animações*/
+main section {
+    opacity: 0;
+    transform: translateY(2rem); /*Para a caixa vir de baixo para cima*/
+
+    animation-name: appear; /*O nome da animation tem que ser o mesmo dos keyframes*/
+    animation-duration: 700ms;
+    animation-fill-mode: forwards; /*Para manter as propriedades que tem no final da animação*/
+}
+
+@keyframes appear {
+    100% {
+        opacity: 1; /*Sendo 0 totalmente invisível e 1 vísivel*/
+        transform: translateY(0);
+    }
+}
+
+form {
+    display: flex;
+    gap: 0.85rem; /*Para dar espaço aos elementos*/
+    flex-wrap: wrap; /*Faz com que os elementos passem para a linha de baixo*/
+    margin: 1.25rem 0;
+}
+
+input, select {
+    all: unset;
+    border: 2px solid #9147ff;
+    border-radius: 0.5rem;
+    padding: 0.675rem;
+    font-size: 0.875rem;
+    background-color: #00000066; /*RR GG BB alpha (transparência)*/
+}
+
+input {
+    flex: 1;
+}
+
+button {
+    width: 100%;
+    border: 0;
+    background-image: linear-gradient(245deg, #9572FC 0%, #43E7AD 50%, #E2D45C 100%);
+    padding: 0.675rem;
+    border-radius: 0.5rem;
+    font-weight: bold; /*Peso da fonte*/
+    text-transform: uppercase;
+    letter-spacing: 0.12px; /*Espaçamento das letras*/
+
+    transition: all 0.3s; /*Transição de qualquer propriedade que foi definida no hover*/
+}
+
+button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 1rem rgba(255, 248, 107, 0.2); /*Eixo X, Eixo Y, espalhamento das informações, cor*/
+}
+
+button:disabled {
+    transition: initial;
+    transform: initial;
+    box-shadow: initial;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
