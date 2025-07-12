@@ -7,7 +7,7 @@ const form = document.getElementById('form')
 
 const perguntarAI = async (question, game, apiKey) => {
 //async: Sair da minha aplicação, ir para alguma aplicação em algum lugar do mundo, esperar uma resposta e receber aqui//
-//Chave de API: AIzaSyBLvgLS5htNfO9Wbm_EOACYPlTnkw_RW-U//
+//Chave de API: //
     const model = "gemini-2.0-flash"
     const geminiURL = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent=${apiKey}`
     const pergunta = `
